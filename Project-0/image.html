@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Search</title>
+    <title>Google Images</title>
     <style>
         #header {
             text-align: right;
@@ -53,20 +53,20 @@
 <body>
         <div id="header">
             <a href="#">Advanced Search</a>
-            <a href="image.html">Images</a>
+            <a href="index.html">Search</a>
             <a href="#">Random</a>
         </div> 
         
         <div id="logo">
-            Google
+            Google Images
         </div>
 
         <div id="form">
             <form action="https://google.com/search">
                 <input type="text" name="q" id="query">
+                <input type="hidden" name="tbm" value="isch">
                 <div id="button">
-                    <input type="submit" value="Google Search">
-                    <input type="button" value="I'm Feeling Lucky">
+                    <input type="submit" value="Search">
                 </div>
             </form>
         </div>
