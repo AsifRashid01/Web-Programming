@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Advanced Search</title>
+    <style>
+
+        #header {
+            border: 3px solid black;
+            height: 100px;
+            padding: 5px;
+        }
+
+        #header > a {
+            float: right;
+            margin: 5px;
+        }
+
+        #header > img {
+            width: 75px;
+        }
+
+        #header_text {
+            color: rgb(223, 20, 20);
+            padding: 28px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #header > hr {
+            margin-top: -7px;
+        }
+
+        #content {
+            border: 3px solid blue;
+            height: 500px;
+            width: 100%;
+        
+        }
+
+        .chead-left {
+            float: left;
+            padding: 45px;
+        }
+
+        .chead-right {
+            padding-left: 770px;
+            padding-top: 45px;
+        }
+
+        #content-form {
+            border: 2px solid red;
+            margin: none;
+        }
+
+        .cbody-left {
+            padding: 45px;
+        }
+
+        .query {
+            
+            float: center;
+            width: 500px;
+            height: 22px;
+        }
+
+        .cbody-right {
+            padding: 45px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img alt="Google" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+
+        <a href="#">Sign in</a>
+        <a href="image.html">Images</a>
+        <a href="index.html">Google Search</a>
+        <div id="header_text">Advanced Search</div>
+        <hr>
+    </div>
+
+    <div id="content">
+        <p class="chead-left">Find pages with...</p>
+        <p class="chead-right">To do this in the search box</p>
+        <div style="clear: both;"></div>
+        <form id="content-form">
+            <div>
+            <label class="cbody-left">all these words:</label>
+            <input type="text" class="query">
+            <label class="cbody-right">Type the important words:</label>
+            <!--<div class="cbody-right">Type the important words:</div> -->
+            </div>
+
+            <div>
+            <label class="cbody-left">this exact word or phrase:</label>
+            <input type="text" class="query">
+            <label class="cbody-right">Put exact words in quote:</label>
+            </div>
+
+            <div>
+            <label class="cbody-left">any of these words:</label>
+            <input type="text" class="query">
+            <label class="cbody-right">Type OR between all the words you want:</label>
+            </div>
+
+            <div>
+            <label class="cbody-left">none of these words:</label>
+            <input type="text" class="query">
+            <label class="cbody-right">Put a minus sign just before words you don't want:</label>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
