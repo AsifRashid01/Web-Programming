@@ -3,7 +3,6 @@
     padding: 10px;
     margin: 5px;
     height: 20px;
-    border: 3px solid black;
     font-family: Arial, sans-serif;
     font-size: 14px;
 }
@@ -14,7 +13,6 @@
 
 #logo {
     text-align: center;
-    border: 3px solid black;
     padding: 60px;
     padding-bottom: 20px;
     margin: 5px;
@@ -31,7 +29,6 @@
 
 #form {
     text-align: center;
-    border: 3px solid black;
     margin: 5px;
     padding: 20px;
 }

@@ -6,7 +6,6 @@
     <style>
 
         #header {
-            border: 3px solid black;
             height: 100px;
             padding: 5px;
         }
@@ -40,11 +39,9 @@
             margin-top: 10px;
             margin-bottom: 10px;
             padding: 28px;
-            background-color: red;
         }
 
         #middle-content {
-            background-color: green;
             margin-top: 10px;
             margin-bottom: 10px;
             padding: 28px;
@@ -54,7 +51,6 @@
             margin-top: 10px;
             margin-bottom: 10px;
             padding: 28px;
-            background-color: white;
         }
 
         #left-label-header {
@@ -70,7 +66,6 @@
         }
 
         #form {
-            border: 2px solid black;
             padding-top: 60px;
         }
 
@@ -116,6 +111,10 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
+        .button:hover {
+            background-color: #1d70f5;
+        }
+
     </style>
 </head>
 <body>
@@ -139,21 +138,22 @@
         </div>
 
         <div id="middle-content">
-            <form id="form">
+            <form id="form" action="https://google.com/search">
                 <div class="query">
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="as_q">
                 </div>
 
                 <div class="query">
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="as_epq">
                 </div>
 
                 <div class="query">
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="as_oq">
                 </div>
 
                 <div class="query">
-                    <input type="text" class="input">
+                    <input type="text" class="input" name="as_eq">
+                    <input type="hidden" name="as_qdr" value="all">
                 </div>
 
                 <div id="submit-button">
