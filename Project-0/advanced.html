@@ -32,40 +32,72 @@
         }
 
         #content {
-            border: 3px solid blue;
-            height: 500px;
-            width: 100%;
-        
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        .chead-left {
-            float: left;
-            padding: 45px;
+        #left-content {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 28px;
+            background-color: red;
         }
 
-        .chead-right {
-            padding-left: 770px;
-            padding-top: 45px;
+        #middle-content {
+            background-color: green;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 28px;
         }
 
-        #content-form {
-            border: 2px solid red;
-            margin: none;
+        #right-content {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 28px;
+            background-color: white;
         }
 
-        .cbody-left {
-            padding: 45px;
+        #left-label-header {
+            line-height: 2.2;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .left-labels {
+            line-height: 2.2;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #form {
+            border: 2px solid black;
+            padding-top: 60px;
         }
 
         .query {
-            
-            float: center;
-            width: 500px;
-            height: 22px;
+            line-height: 2.8;
         }
 
-        .cbody-right {
-            padding: 45px;
+        #right-label-header {
+            line-height: 2.2;
+            font-size: 16px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .right-labels {
+            line-height: 3.3;
+            font-size: 65%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .input {
+            width: 540px;
+            height: 22px;
+            border: 1px solid #526cff;
+        }
+
+        .input:focus-within {
+            box-shadow: 1px 1px 8px 1px #3375f1;
         }
 
     </style>
@@ -82,35 +114,43 @@
     </div>
 
     <div id="content">
-        <p class="chead-left">Find pages with...</p>
-        <p class="chead-right">To do this in the search box</p>
-        <div style="clear: both;"></div>
-        <form id="content-form">
-            <div>
-            <label class="cbody-left">all these words:</label>
-            <input type="text" class="query">
-            <label class="cbody-right">Type the important words:</label>
-            <!--<div class="cbody-right">Type the important words:</div> -->
-            </div>
+        <div id="left-content">
+            <p id="left-label-header">Find pages with...</p>
+            <p class="left-labels">all these words:</p>
+            <p class="left-labels">this exact word or phrase:</p>
+            <p class="left-labels">any of these words:</p>
+            <p class="left-labels">none of these words:</p>
+        </div>
 
-            <div>
-            <label class="cbody-left">this exact word or phrase:</label>
-            <input type="text" class="query">
-            <label class="cbody-right">Put exact words in quote:</label>
-            </div>
+        <div id="middle-content">
+            <form id="form">
+                <div class="query">
+                    <input type="text" class="input">
+                </div>
 
-            <div>
-            <label class="cbody-left">any of these words:</label>
-            <input type="text" class="query">
-            <label class="cbody-right">Type OR between all the words you want:</label>
-            </div>
+                <div class="query">
+                    <input type="text" class="input">
+                </div>
 
-            <div>
-            <label class="cbody-left">none of these words:</label>
-            <input type="text" class="query">
-            <label class="cbody-right">Put a minus sign just before words you don't want:</label>
-            </div>
-        </form>
+                <div class="query">
+                    <input type="text" class="input">
+                </div>
+
+                <div class="query">
+                    <input type="text" class="input">
+                </div>
+                
+            </form>
+        </div>
+
+        <div id="right-content">
+            <p id="right-label-header">To do this in the search box</p>
+            <p class="right-labels">Type the important words:  tricolor rat terrier</p>
+            <p class="right-labels">Put exact words in quotes:  "rat terrier"</p>
+            <p class="right-labels">Type OR between all the words you want:  miniature OR standard</p>
+            <p class="right-labels">Put a minus sign just before words you don't want:  -rodent, -"Jack Russell"</p>
+        </div>
+
     </div>
 </body>
 </html>
