@@ -10,6 +10,11 @@ class NewEntryForm(forms.Form):
 
     content.widget.attrs.update(size='30')
 
+class EditEntryForm(forms.Form):
+    content = forms.CharField(widget=forms.Textarea)
+
+    content.widget.attrs.update(size='30')
+
 
 def index(request):
     return render(request, "encyclopedia/index.html", {
@@ -55,8 +60,8 @@ def new_page(request):
             entry_title = entry_form.cleaned_data["title"]
             entry_content = entry_form.cleaned_data["content"]
             
-            print(entry_title)
-            print(entry_content)
+            #print(entry_title)
+            #print(entry_content)
             
             # Check if title exists, if not then save it
             saved_entries = [x.lower() for x in util.list_entries()]
@@ -77,3 +82,37 @@ def new_page(request):
     return render(request, "encyclopedia/new_page.html", {
         "form": entry_form
     })
+
+def edit_page(request, title):
+
+    if request.method == 'POST':
+        #print(request.POST['content'])
+        edit_content = request.POST['content']
+        
+        data = {
+            'title': title,
+            'content': edit_content 
+        }
+
+        edited_form = NewEntryForm(data)
+
+        if edited_form.is_valid():
+            
+            entry_title = edited_form.cleaned_data["title"]
+            entry_content = edited_form.cleaned_data["content"]
+
+            util.save_entry(entry_title, entry_content)
+            
+            # redirect to the new entry page:
+            return redirect("entry", title=entry_title)
+    else:
+
+        # For Get we render the edit page with the text area prefilled with content
+        content = util.get_entry(title)
+
+        edit_form = EditEntryForm({'content': content})
+
+    return render(request, "encyclopedia/edit_page.html", {
+        "title": title,
+        "edit_entry": edit_form
+    })  
