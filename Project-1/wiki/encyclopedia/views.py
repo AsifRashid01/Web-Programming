@@ -3,6 +3,7 @@ from django import forms
 from django.http import HttpResponseRedirect, HttpResponse
 from . import util
 import markdown2
+import random
 
 class NewEntryForm(forms.Form):
     title = forms.CharField(label="Entry Title")
@@ -115,4 +116,9 @@ def edit_page(request, title):
     return render(request, "encyclopedia/edit_page.html", {
         "title": title,
         "edit_entry": edit_form
-    })  
+    })
+
+def random_page(request):
+    random_title = random.choice(util.list_entries())
+
+    return redirect("entry", title=random_title)
